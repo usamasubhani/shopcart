@@ -4,7 +4,8 @@ const Product = () => {
     return (
         <div>
             <h1>Name</h1>
-            <p>$100</p>
+            <p>${Math.floor(Math.random()*100)}</p>
+            <button>Add to Cart</button>
         </div>
     )
 }
