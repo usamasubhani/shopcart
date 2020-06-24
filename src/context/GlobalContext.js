@@ -24,10 +24,18 @@ export const GlobalProvider = ({ children }) => {
       })
     }
 
+    function removeFromCart(id) {
+      dispatch({
+        type: 'remove',
+        payload: id
+      })
+    }
+
     return (<GlobalContext.Provider value={{
         products: state.products,
         cart: state.cart,
-        addToCart
+        addToCart,
+        removeFromCart
       }}>
         {children}
       </GlobalContext.Provider>);
