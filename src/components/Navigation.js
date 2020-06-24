@@ -1,13 +1,18 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalContext'
 
+import { Link } from "react-router-dom";
+
 function Navigation() {
     const { cart } = useContext(GlobalContext);
 
-    console.log(cart)
     return (
         <div>
-            <p><i class="fa fa-shopping-cart" aria-hidden="true"></i>({cart.length})</p>
+            <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/cart"><i className="fa fa-shopping-cart" aria-hidden="true"></i>({cart.length})</Link></li>
+            </ul>
+            
         </div>
     )
 }
