@@ -1,14 +1,17 @@
 import React from 'react';
 import './App.css';
 import ProductGrid from './components/ProductGrid'
-import { ProductsContextProvider } from './context/ProductsContext'
+import Navigation from './components/Navigation'
+import { GlobalProvider } from './context/GlobalContext'
+
 function App() {
   return (
-    <ProductsContextProvider>
-    <div className="App">
-      <ProductGrid />
-    </div>
-    </ProductsContextProvider>
+    <GlobalProvider>
+      <div className="container">
+        <Navigation />
+        <ProductGrid />
+      </div>
+    </GlobalProvider>
   );
 }
 
