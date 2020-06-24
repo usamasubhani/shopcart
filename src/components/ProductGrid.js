@@ -1,15 +1,14 @@
 import React, { useContext } from 'react'
+import './productGrid.css'
 import Product from './Product'
-import { ProductsContext } from '../context/ProductsContext'
+import { GlobalContext } from '../context/GlobalContext'
 
 const ProductGrid = () => {
-    const { message, setMessage } = useContext(ProductsContext);
-    console.log(message)
+    const { products } = useContext(GlobalContext);
+    
     return (
-        <div>
-            <p>{message}</p>
-            
-            {/* {products.map(product => (<Product product={product} />))}             */}
+        <div className="productGrid">
+            {products.map(product => (<Product key={product.id} product={product} />))}
         </div>
     )
 }
