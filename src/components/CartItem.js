@@ -1,17 +1,20 @@
 import React, { useState, useContext } from 'react';
 import { GlobalContext } from '../context/GlobalContext'
 
+import { Paper, Button } from '@material-ui/core'
 const CartItem = ({ product }) => {
-    const { addToCart } = useContext(GlobalContext);
+    const { removeFromCart } = useContext(GlobalContext);
 
-    const add = () => {
-        addToCart({product});
+    const remove = () => {
+        removeFromCart(product.id)
     }
     return (
         <div className="cartItem">
-            <p>{ product.name }</p>
-            <p>${ product.price }</p>
-            {/* <button onClick={add}>Add to Cart</button> */}
+            <Paper elevation={3}>
+            <span>{ product.name }</span>
+            <span>${ product.price }</span>
+            <Button color="secondary" onClick={remove}>X</Button>
+            </Paper>
         </div>
     )
 }

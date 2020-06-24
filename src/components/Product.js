@@ -1,4 +1,6 @@
 import React, { useState, useContext } from 'react';
+import { Card, Typography, CardContent, Grid, Button } from '@material-ui/core'
+
 import { GlobalContext } from '../context/GlobalContext'
 
 const Product = ({ product }) => {
@@ -9,10 +11,17 @@ const Product = ({ product }) => {
     }
     return (
         <div className="product">
-            <h1>{ product.name }</h1>
+            <Card variant="outlined">
+                    <CardContent>
+                        <Typography variant="h5">{ product.name }</Typography>
+                        <Typography variant="h6">${ product.price }</Typography>
+                        <Button variant="outlined" color="primary" size="small" onClick={add}>Add to Cart</Button>
+                    </CardContent>
+            </Card>
+            {/* <h1>{ product.name }</h1>
             <p>${ product.price }</p>
             {/* <p>${Math.floor(Math.random()*100)}</p> */}
-            <button onClick={add}>Add to Cart</button>
+            {/* <button onClick={add}>Add to Cart</button> */}
         </div>
     )
 }
