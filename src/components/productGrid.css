@@ -1,0 +1,8 @@
+.productGrid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product {
+    margin: 30px;
+}
