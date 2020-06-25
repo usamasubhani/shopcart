@@ -3,12 +3,12 @@ export default (state, action) => {
         case 'addToCart':
             return {
                 ...state,
-                cart: [action.payload, ...state.cart]
+                cart: [action.payload.product, ...state.cart]
             }
         case 'remove':
             return {
                 ...state,
-                cart: state.cart.filter(item => item.product.id !== action.payload)
+                cart: state.cart.filter(item => item.id !== action.payload)
             }
         default:
             return state;
