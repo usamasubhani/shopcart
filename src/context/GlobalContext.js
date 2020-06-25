@@ -3,15 +3,15 @@ import AppReducer from './AppReducer'
 
 const startingState = {
     products: [
-        { id: 1, name: 'WOW', price:10},
-        { id: 2, name: 'Nice', price:20},
-        { id: 3, name: 'EE', price:99},
-        { id: 4, name: 'SS', price:33},
-        { id: 5, name: 'CC', price:2},
+        { id: 1, name: 'Zero to One', price:10},
+        { id: 2, name: 'Antifragile', price:20},
+        { id: 3, name: 'Sapiens', price:99},
+        { id: 4, name: 'The Learn Startup', price:33},
+        { id: 5, name: 'AI Superpowers', price:2},
     ],
     cart: [
-      { id: 1, name: 'WOW', price:10, quantity:1},
-      { id: 2, name: 'Nice', price:20,  quantity:1},
+      { id: 4, name: 'The Learn Startup', price:33, quantity: 1},
+        { id: 5, name: 'AI Superpowers', price:2, quantity: 1},
     ]
 }
 

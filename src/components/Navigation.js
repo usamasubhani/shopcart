@@ -9,7 +9,7 @@ function Navigation() {
     return (
         <div>
             <ul>
-                <li><Link to="/">Home</Link></li>
+                <li><Link to="/"><i class="fa fa-home"></i></Link></li>
                 <li><Link to="/cart"><i className="fa fa-shopping-cart" aria-hidden="true"></i>({cart.length})</Link></li>
             </ul>
             

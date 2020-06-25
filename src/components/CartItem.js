@@ -21,16 +21,28 @@ const CartItem = ({ product }) => {
         }
     }
     return (
-        <div className="cartItem">
-            <Paper elevation={3}>
-            <span>{ product.name }</span>
-            <span>${ product.price }</span>
-            <span>{ product.quantity }</span>
-            <Button color="secondary" onClick={remove}>X</Button>
-            <Button color="secondary" onClick={increaseQtty}>+</Button>
-            <Button color="secondary" onClick={decreaseQtty}>-</Button>
-            </Paper>
-        </div>
+        <tr>
+                <td>
+                    <Button color="secondary" onClick={remove}>
+                        <i className="fa fa-trash" aria-hidden="true"></i>
+                    </Button>{ product.name }
+                </td>
+
+                <td>${ product.price }</td>
+                
+                <td>{ product.quantity }</td>
+                
+                <td>
+                    <Button color="primary" onClick={increaseQtty}>
+                        <i className="fa fa-plus" aria-hidden="true"></i>
+                    </Button>
+                    <Button color="secondary" onClick={decreaseQtty}>
+                        <i className="fa fa-minus" aria-hidden="true"></i>
+                    </Button>
+                </td>
+                
+                
+        </tr>
     )
 }
 

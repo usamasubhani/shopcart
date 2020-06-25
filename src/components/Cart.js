@@ -9,7 +9,20 @@ const Cart = () => {
     // console.log(cart)
     return (
         <div className="cart">
+            {/* {cart.map(item => (<CartItem key={item.id} product={item} />))} */}
+            <table id="cartTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
             {cart.map(item => (<CartItem key={item.id} product={item} />))}
+            </tbody>
+            </table>
         </div>
     )
 }
