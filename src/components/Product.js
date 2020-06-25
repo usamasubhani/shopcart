@@ -1,5 +1,5 @@
-import React, { useState, useContext } from 'react';
-import { Card, Typography, CardContent, Grid, Button } from '@material-ui/core'
+import React, { useContext } from 'react';
+import { Card, Typography, CardContent, Button } from '@material-ui/core'
 
 import { GlobalContext } from '../context/GlobalContext'
 
