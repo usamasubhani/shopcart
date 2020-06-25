@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalContext'
-
+import './Navigation.css';
 import { Link } from "react-router-dom";
 
 function Navigation() {
