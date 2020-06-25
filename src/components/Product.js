@@ -4,11 +4,18 @@ import { Card, Typography, CardContent, Button } from '@material-ui/core'
 import { GlobalContext } from '../context/GlobalContext'
 
 const Product = ({ product }) => {
-    const { addToCart } = useContext(GlobalContext);
+    const { cart, addToCart, increase } = useContext(GlobalContext);
 
     const add = () => {
-        addToCart({product});
+        if (cart.find(item => item.id === product.id)) {
+            // product.quantity++;
+            increase(product.id)
+        } else {
+            product.quantity=1;
+            addToCart({product});
+        }
     }
+
     return (
         <div className="product">
             <Card variant="outlined">

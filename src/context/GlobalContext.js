@@ -9,7 +9,10 @@ const startingState = {
         { id: 4, name: 'SS', price:33},
         { id: 5, name: 'CC', price:2},
     ],
-    cart: []
+    cart: [
+      { id: 1, name: 'WOW', price:10, quantity:1},
+      { id: 2, name: 'Nice', price:20,  quantity:1},
+    ]
 }
 
 export const GlobalContext = createContext(startingState);
@@ -17,7 +20,7 @@ export const GlobalContext = createContext(startingState);
 export const GlobalProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AppReducer, startingState);
 
-    function addToCart(product) {
+    function addToCart(product) {      
       dispatch({
         type: 'addToCart',
         payload: product
@@ -31,11 +34,27 @@ export const GlobalProvider = ({ children }) => {
       })
     }
 
+    function increase(id) {
+      dispatch({
+        type: 'increase',
+        payload: id
+      })
+    }
+
+    function decrease(id) {
+      dispatch({
+        type: 'decrease',
+        payload: id
+      })
+    }
+
     return (<GlobalContext.Provider value={{
         products: state.products,
         cart: state.cart,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        increase,
+        decrease
       }}>
         {children}
       </GlobalContext.Provider>);

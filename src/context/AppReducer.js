@@ -10,6 +10,18 @@ export default (state, action) => {
                 ...state,
                 cart: state.cart.filter(item => item.id !== action.payload)
             }
+        case 'increase':
+            state.cart[state.cart.findIndex(item => item.id === action.payload)].quantity++
+            return {
+                ...state,
+                cart: state.cart
+            }
+        case 'decrease':
+            state.cart[state.cart.findIndex(item => item.id === action.payload)].quantity--
+            return {
+                ...state,
+                cart: state.cart
+            }
         default:
             return state;
     }
